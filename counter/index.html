@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <!-- JSX stands for JavaScript XML. It is a syntax extension for JavaScript used in React to describe what the UI should look like.
+
+        Even though it looks like HTML, JSX is not HTML. It's a syntactic sugar that allows you to write HTML-like code within JavaScript, which gets
+        compiled down to JavaScript by tools like Babel. 
+        
+        🧠 Why Was JSX Introduced?
+         React is all about building UI using JavaScript. But writing HTML inside React.createElement(...) is hard to read and write. JSX gives us a cleaner and 
+         more readable way to describe UI components.
+
+         🧾 Example Comparison
+         ✅ Using JSX:
+         const element = <h1>Hello, world!</h1>;
+         ❌ Without JSX:
+          const element = React.createElement('h1', null, 'Hello, world!');
+
+          ⚙️ How JSX Works Under the Hood
+JSX is not understood by browsers. It's first compiled by Babel into React.createElement() calls.
+
+For example:
+
+const element = <h1 className="greet">Hello</h1>;
+
+Is compiled to:
+
+const element = React.createElement(
+  'h1',
+  { className: 'greet' },
+  'Hello'
+);
+
+✅ JSX Features (Detailed)
+1. Embedding Expressions with {}
+You can write JavaScript expressions inside JSX by using {}.
+
+const name = "Abbad";
+const greeting = <h1>Hello, {name}</h1>;
+You can include variables, expressions, function calls, ternaries, etc.
+
+2. JSX Must Have One Parent Element
+This is required because React.createElement() must return one root node.
+
+// ❌ Wrong
+return (
+  <h1>Hello</h1>
+  <p>Welcome</p>
+);
+
+// ✅ Right - Wrap with a div or fragment
+return (
+  <>
+    <h1>Hello</h1>
+    <p>Welcome</p>
+  </>
+);
+3. Attributes Use camelCase
+Because JSX is JavaScript, all attributes follow JS-style naming:
+
+HTML	                    JSX
+class                 	className
+for                     	htmlFor
+onclick	                  onClick
+
+4. JSX Prevents Injection Attacks
+JSX escapes any values embedded in it before rendering — this means it's safe from XSS attacks by default.
+
+5. JSX Can Contain Children
+
+const element = (
+  <div>
+    <h1>Hello</h1>
+    <p>This is JSX</p>
+  </div>
+);
+
+        -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
