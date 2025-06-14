@@ -9,8 +9,25 @@ let [counter, setCounter] = useState(1)
     const addValue=()=>{
       // counter+=1;
       //console.log(counter);//working but not reflecting in UI, the reason why we use
-      counter+=1;
-      setCounter(counter);
+      
+      // setCounter(counter+1);
+      // setCounter(counter+1);
+      // setCounter(counter+1);
+      // setCounter(counter+1);
+      // this way is not gonna increase counter by 4, as react will treat it as same work and update counter by 1.
+      //instead u can use callback to trigger updation everytime.
+      setCounter(prevCounter=>{
+           return  prevCounter+1;
+    })
+      setCounter((prevCounter)=>{
+           return  prevCounter+1;
+      })
+      setCounter((prevCounter)=>{
+            return prevCounter+1;
+      })
+      setCounter((prevCounter)=>{
+           return  prevCounter+1;
+      })
     }
     const reduceVal=()=>{
       if(counter>0) counter-=1;
